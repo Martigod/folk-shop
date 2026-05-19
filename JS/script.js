@@ -46,7 +46,7 @@ if (cartItems != null) {
         cartItems.innerHTML = "<p>Количката е празна.</p>";
     } else {
         for (let i = 0; i < cart.length; i++) {
-            cartItems.innerHTML += "<p>" + cart[i].name + " - " + cart[i].price + " лв.</p>";
+            cartItems.innerHTML += "<p>" + cart[i].name + ": " + cart[i].price + " лв.</p>";
             total = total + cart[i].price;
         }
     }
