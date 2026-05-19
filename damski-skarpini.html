@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Дамски скарпини - Folk Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Folk Shop</h1>
+        <p>Магазин за фолклорни обувки, облекло и аксесоари</p>
+    </header>
+    <nav>
+        <a href="index.html">Начало</a>
+        <a href="cart.html">Количка</a>
+    </nav>
+    <main>
+        <div class="product-details">
+            <h2>Дамски скарпини</h2>
+            <img src="images/damski-skarpini.jpg" alt="Дамски скарпини">
+            <p class="short-description">
+                Удобни обувки за народни танци и репетиции.
+            </p>
+            <p>
+                Тези дамски скарпини са подходящи за хора, които танцуват народни танци,
+                участват в репетиции или сценични изяви. Обувките са леки, удобни и
+                направени така, че да позволяват лесно движение по време на танц.
+            </p>
+            <p class="price">Цена: 75 лв.</p>
+        </div>
+        <div class="form-box">
+            <h3>Форма за закупуване</h3>
+            <form>
+                <label for="buyer-name">Име:</label>
+                <input type="text" id="buyer-name" name="buyer-name">
+
+                <label for="buyer-address">Адрес:</label>
+                <input type="text" id="buyer-address" name="buyer-address">
+
+                <button type="submit">Изпрати поръчка</button>
+            </form>
+        </div>
+        <div class="reviews">
+            <h3>Потребителски ревюта</h3>
+            <p><strong>Мария:</strong> Много удобни обувки за репетиции.</p>
+            <p><strong>Елена:</strong> Харесват ми, защото са леки и стоят добре.</p>
+        </div>
+        <div class="form-box">
+            <h3>Покупка</h3>
+            <p>Можете да добавите продукта в количката и после да завършите поръчката.</p>
+            <button class="add-to-cart" data-name="Дамски скарпини" data-price="75">
+                Добави в количката
+            </button>
+            <p class="cart-message"></p>
+        </div>
+    </main>
+    <footer>
+        <p>Folk Shop - учебен проект</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

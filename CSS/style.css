@@ -4,36 +4,43 @@ body {
     background-color: #f5f1e8;
     color: #000000;
 }
+
 header {
     background-color: #871e1e;
     color: white;
     text-align: center;
     padding: 25px;
 }
+
 nav {
     background-color: #4b1111;
     text-align: center;
     padding: 12px;
 }
+
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
+
 main {
     width: 90%;
     margin: 30px auto;
 }
+
 h2 {
     text-align: center;
     margin-bottom: 25px;
 }
+
 .products {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
+
 .product-card {
     background-color: white;
     width: 250px;
@@ -42,19 +49,23 @@ h2 {
     padding: 15px;
     text-align: center;
 }
+
 .product-card:hover {
     background-color: #f8eee0;
 }
+
 .product-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     border-radius: 6px;
 }
+
 .price {
     font-weight: bold;
     color: #871e1e;
 }
+
 .button {
     display: inline-block;
     background-color: #871e1e;
@@ -64,9 +75,11 @@ h2 {
     border-radius: 5px;
     margin-top: 10px;
 }
+
 .button:hover {
     background-color: #4b1111;
 }
+
 footer {
     background-color: #000000;
     color: white;

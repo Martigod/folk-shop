@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Количка - Folk Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Folk Shop</h1>
+        <p>Магазин за фолклорно облекло</p>
+    </header>
+    <nav>
+        <a href="index.html">Начало</a>
+        <a href="cart.html">Количка</a>
+    </nav>
+    <main>
+        <h2>Количка</h2>
+        <div class="cart-box">
+            <div id="cart-items"></div>
+            <p class="price">
+                Общо: <span id="total-price">0</span> лв.
+            </p>
+            <button id="clear-cart">Изчисти количката</button>
+        </div>
+        <div class="form-box">
+            <h3>Форма за поръчка</h3>
+            <form id="order-form">
+                <label for="buyer-name">Име:</label>
+                <input type="text" id="buyer-name" name="buyer-name">
+                <label for="buyer-address">Адрес:</label>
+                <input type="text" id="buyer-address" name="buyer-address">
+                <button type="submit">Изпрати поръчка</button>
+            </form>
+            <p id="order-message"></p>
+        </div>
+    </main>
+    <footer>
+        <p>Folk Shop - учебен проект</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
