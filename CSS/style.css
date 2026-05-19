@@ -87,3 +87,34 @@ footer {
     padding: 15px;
     margin-top: 40px;
 }
+
+.cart-box {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+.cart-box button,
+.form-box button,
+.add-to-cart {
+    background-color: #871e1e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-box button:hover,
+.form-box button:hover,
+.add-to-cart:hover {
+    background-color: #4b1111;
+}
+
+.cart-message,
+#order-message {
+    font-weight: bold;
+    color: #7b1e1e;
+}
