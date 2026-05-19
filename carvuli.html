@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Цървули - Folk Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Folk Shop</h1>
+        <p>Магазин за фoлклopнo облекло</p>
+    </header>
+    <nav>
+        <a href="index.html">Начало</a>
+        <a href="cart.html">Количка</a>
+    </nav>
+    <main>
+        <div class="product-details">
+            <h2>Цървули</h2>
+            <img src="images/carvuli.jpg" alt="Цървули">
+            <p class="short-description">
+                Традиционни цървули за фолклорни изпълнения.
+            </p>
+            <p class="price">Цена: 45 лв.</p>
+        </div>
+        <div class="form-box">
+            <h3>Форма за закупуване</h3>
+            <form>
+                <label for="buyer-name">Име:</label>
+                <input type="text" id="buyer-name" name="buyer-name">
+
+                <label for="buyer-address">Адрес:</label>
+                <input type="text" id="buyer-address" name="buyer-address">
+
+                <button type="submit">Изпрати поръчка</button>
+            </form>
+        </div>
+        <div class="reviews">
+            <h3>Потребителски ревюта</h3>
+            <p><strong>Николай:</strong> Много добре стоят с народна носия.</p>
+            <p><strong>Петър:</strong> Добър продукт за тази цена.</p>
+        </div>
+        <div class="form-box">
+            <h3>Покупка</h3>
+            <p>Можете да добавите продукта в количката и после да завършите поръчката.</p>
+            <button class="add-to-cart" data-name="Цървули" data-price="45">
+                Добави в количката
+            </button>
+            <p class="cart-message"></p>
+        </div>
+    </main>
+    <footer>
+        <p>Folk Shop - учебен проект</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
