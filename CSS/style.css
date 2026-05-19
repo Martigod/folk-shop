@@ -116,5 +116,10 @@ footer {
 .cart-message,
 #order-message {
     font-weight: bold;
-    color: #7b1e1e;
+    color: #871e1e;
+}
+
+#review-message {
+    font-weight: bold;
+    color: #871e1e;
 }

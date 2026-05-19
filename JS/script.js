@@ -92,3 +92,25 @@ if (orderForm != null) {
         orderForm.reset();
     });
 }
+let reviewForm = document.getElementById("review-form");
+
+if (reviewForm != null) {
+    reviewForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let reviewText = document.getElementById("review-text").value;
+        let reviewsList = document.getElementById("reviews-list");
+        let reviewMessage = document.getElementById("review-message");
+
+        if (reviewText == "") {
+            reviewMessage.textContent = "Моля, напишете коментар.";
+            return;
+        }
+
+        reviewsList.innerHTML += "<p><strong>Нов потребител:</strong> " + reviewText + "</p>";
+
+        reviewMessage.textContent = "Ревюто беше добавено.";
+
+        reviewForm.reset();
+    });
+}

@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Folk Shop</h1>
-        <p>Магазин за фолклорни обувки, облекло и аксесоари</p>
+        <p>Магазин за фoлклopнo облекло</p>
     </header>
     <nav>
         <a href="index.html">Начало</a>
@@ -43,18 +43,26 @@
             </form>
         </div>
         <div class="reviews">
-            <h3>Потребителски ревюта</h3>
-            <p><strong>Мария:</strong> Много удобни обувки за репетиции.</p>
-            <p><strong>Елена:</strong> Харесват ми, защото са леки и стоят добре.</p>
-        </div>
-        <div class="form-box">
-            <h3>Покупка</h3>
-            <p>Можете да добавите продукта в количката и после да завършите поръчката.</p>
-            <button class="add-to-cart" data-name="Дамски скарпини" data-price="75">
-                Добави в количката
-            </button>
-            <p class="cart-message"></p>
-        </div>
+    <h3>Потребителски ревюта</h3>
+
+    <div id="reviews-list">
+        <p><strong>Мария:</strong> Много удобни обувки за репетиции.</p>
+        <p><strong>Елена:</strong> Харесват ми, защото са леки и стоят добре.</p>
+    </div>
+</div>
+
+<div class="form-box">
+    <h3>Форма за изпращане на ревю</h3>
+
+    <form id="review-form">
+        <label for="review-text">Коментар:</label>
+        <textarea id="review-text" name="review-text"></textarea>
+
+        <button type="submit">Изпрати ревю</button>
+    </form>
+
+    <p id="review-message"></p>
+</div>
     </main>
     <footer>
         <p>Folk Shop - учебен проект</p>
