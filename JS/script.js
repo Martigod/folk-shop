@@ -109,18 +109,54 @@ if (orderForm != null) {
 }
 let reviewForm = document.getElementById("review-form");
 if (reviewForm != null) {
+    let params = new URLSearchParams(window.location.search);
+    let productId = params.get("id");
+    let reviewsList = document.getElementById("reviews-list");
+    let reviewMessage = document.getElementById("review-message");
+    function loadReviews() {
+        fetch("/api/reviews/" + productId)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (reviews) {
+                reviewsList.innerHTML = "";
+                if (reviews.length == 0) {
+                    reviewsList.innerHTML = "<p>Все още няма ревюта за този продукт.</p>";
+                } else {
+                    for (let i = 0; i < reviews.length; i++) {
+                        reviewsList.innerHTML += "<p><strong>Потребител:</strong> " + reviews[i].comment + "</p>";
+                    }
+                }
+            });
+    }
+    loadReviews();
     reviewForm.addEventListener("submit", function (event) {
         event.preventDefault();
         let reviewText = document.getElementById("review-text").value;
-        let reviewsList = document.getElementById("reviews-list");
-        let reviewMessage = document.getElementById("review-message");
         if (reviewText == "") {
             reviewMessage.textContent = "Моля, напишете коментар.";
             return;
         }
-        reviewsList.innerHTML += "<p><strong>Нов потребител:</strong> " + reviewText + "</p>";
-        reviewMessage.textContent = "Ревюто беше добавено.";
-        reviewForm.reset();
+        fetch("/api/reviews", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                productId: productId,
+                comment: reviewText
+            })
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            reviewMessage.textContent = "Ревюто беше добавено.";
+
+            reviewForm.reset();
+
+            loadReviews();
+        });
     });
 }
 let productDetails = document.getElementById("product-details");

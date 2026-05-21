@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const Product = require("./Product");
 const Order = require("./Order");
+const Review = require("./Review");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,6 +43,25 @@ app.post("/api/orders", async function (req, res) {
     await order.save();
     res.json({
         message: "Поръчката беше запазена успешно"
+    });
+});
+app.get("/api/reviews/:productId", async function (req, res) {
+    const reviews = await Review.find({
+        productId: req.params.productId
+    });
+
+    res.json(reviews);
+});
+app.post("/api/reviews", async function (req, res) {
+    const productId = req.body.productId;
+    const comment = req.body.comment;
+    const review = new Review({
+        productId: productId,
+        comment: comment
+    });
+    await review.save();
+    res.json({
+        message: "Ревюто беше запазено успешно."
     });
 });
 app.listen(3000, function () {
