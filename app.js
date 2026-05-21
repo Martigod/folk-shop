@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const Product = require("./models/Product");
+const Product = require("./Product");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
