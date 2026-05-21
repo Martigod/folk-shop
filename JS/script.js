@@ -84,11 +84,27 @@ if (orderForm != null) {
             document.getElementById("order-message").textContent = "Количката е празна.";
             return;
         }
-        document.getElementById("order-message").textContent = name + ", благодарим за поръчката!";
-        localStorage.removeItem("cart");
-        cartItems.innerHTML = "<p>Количката е празна.</p>";
-        totalPrice.textContent = "0";
-        orderForm.reset();
+        fetch("/api/orders", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                buyerName: name,
+                buyerAddress: address,
+                products: cart
+            })
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                document.getElementById("order-message").textContent = name + ", благодарим за поръчката!";
+                localStorage.removeItem("cart");
+                cartItems.innerHTML = "<p>Количката е празна.</p>";
+                totalPrice.textContent = "0";
+                orderForm.reset();
+            });
     });
 }
 let reviewForm = document.getElementById("review-form");
@@ -131,6 +147,7 @@ if (productDetails != null) {
             addProductButton.addEventListener("click", function () {
                 let cart = getCart();
                 let productForCart = {
+                    productId: product._id,
                     name: product.name,
                     price: product.price
                 };
