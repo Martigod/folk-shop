@@ -5,7 +5,7 @@ const Product = require("./Product");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 mongoose.connect("mongodb://127.0.0.1:27017/folk-shop")
     .then(function () {
         console.log("Connected to MongoDB");
@@ -13,6 +13,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/folk-shop")
     .catch(function (error) {
         console.log("MongoDB error:", error);
     });
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 app.get("/api/products", async function (req, res) {
     const products = await Product.find();
     res.json(products);
