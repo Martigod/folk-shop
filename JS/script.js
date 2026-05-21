@@ -194,3 +194,56 @@ if (productDetails != null) {
             });
         });
 }
+let adminProducts = document.getElementById("admin-products");
+let adminOrders = document.getElementById("admin-orders");
+if (adminProducts != null && adminOrders != null) {
+    fetch("/api/products")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (products) {
+            fetch("/api/orders")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (orders) {
+                    adminProducts.innerHTML = "";
+                    for (let i = 0; i < products.length; i++) {
+                        let boughtCount = 0;
+                        for (let j = 0; j < orders.length; j++) {
+                            for (let k = 0; k < orders[j].products.length; k++) {
+                                if (orders[j].products[k].productId == products[i]._id) {
+                                    boughtCount = boughtCount + 1;
+                                }
+                            }
+                        }
+                        adminProducts.innerHTML += `
+                            <div class="admin-item">
+                                <p><strong>${products[i].name}</strong></p>
+                                <p>Цена: ${products[i].price} лв.</p>
+                                <p>Закупен: ${boughtCount} пъти</p>
+                            </div>
+                        `;
+                    }
+                    adminOrders.innerHTML = "";
+                    if (orders.length == 0) {
+                        adminOrders.innerHTML = "<p>Няма направени поръчки.</p>";
+                    } else {
+                        for (let i = 0; i < orders.length; i++) {
+                            let productsText = "";
+                            for (let j = 0; j < orders[i].products.length; j++) {
+                                productsText += orders[i].products[j].name + " - " + orders[i].products[j].price + " лв.<br>";
+                            }
+                            adminOrders.innerHTML += `
+                                <div class="admin-item">
+                                    <p><strong>Клиент:</strong> ${orders[i].buyerName}</p>
+                                    <p><strong>Адрес:</strong> ${orders[i].buyerAddress}</p>
+                                    <p><strong>Продукти:</strong><br>${productsText}</p>
+                                    <p><strong>Общо:</strong> ${orders[i].totalPrice} лв.</p>
+                                </div>
+                            `;
+                        }
+                    }
+                });
+        });
+}

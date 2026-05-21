@@ -4,43 +4,36 @@ body {
     background-color: #f5f1e8;
     color: #000000;
 }
-
 header {
     background-color: #871e1e;
     color: white;
     text-align: center;
     padding: 25px;
 }
-
 nav {
     background-color: #4b1111;
     text-align: center;
     padding: 12px;
 }
-
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
-
 main {
     width: 90%;
     margin: 30px auto;
 }
-
 h2 {
     text-align: center;
     margin-bottom: 25px;
 }
-
 .products {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
-
 .product-card {
     background-color: white;
     width: 250px;
@@ -49,23 +42,19 @@ h2 {
     padding: 15px;
     text-align: center;
 }
-
 .product-card:hover {
     background-color: #f8eee0;
 }
-
 .product-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     border-radius: 6px;
 }
-
 .price {
     font-weight: bold;
     color: #871e1e;
 }
-
 .button {
     display: inline-block;
     background-color: #871e1e;
@@ -75,11 +64,9 @@ h2 {
     border-radius: 5px;
     margin-top: 10px;
 }
-
 .button:hover {
     background-color: #4b1111;
 }
-
 footer {
     background-color: #000000;
     color: white;
@@ -87,14 +74,12 @@ footer {
     padding: 15px;
     margin-top: 40px;
 }
-
 .cart-box {
     background-color: white;
     padding: 20px;
     border: 1px solid #dddddd;
     border-radius: 8px;
 }
-
 .cart-box button,
 .form-box button,
 .add-to-cart {
@@ -106,20 +91,31 @@ footer {
     border-radius: 5px;
     cursor: pointer;
 }
-
 .cart-box button:hover,
 .form-box button:hover,
 .add-to-cart:hover {
     background-color: #4b1111;
 }
-
 .cart-message,
 #order-message {
     font-weight: bold;
     color: #871e1e;
 }
-
 #review-message {
     font-weight: bold;
     color: #871e1e;
+}
+.admin-box {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.admin-item {
+    border: 1px solid #dddddd;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 6px;
+    background-color: #fff8ee;
 }

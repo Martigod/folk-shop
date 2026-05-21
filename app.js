@@ -45,6 +45,10 @@ app.post("/api/orders", async function (req, res) {
         message: "Поръчката беше запазена успешно"
     });
 });
+app.get("/api/orders", async function (req, res) {
+    const orders = await Order.find();
+    res.json(orders);
+});
 app.get("/api/reviews/:productId", async function (req, res) {
     const reviews = await Review.find({
         productId: req.params.productId
