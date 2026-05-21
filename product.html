@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Продукт - Folk Shop</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Folk Shop</h1>
+        <p>Магазин за фолклорни обувки, облекло и аксесоари</p>
+    </header>
+    <nav>
+        <a href="index.html">Начало</a>
+        <a href="cart.html">Количка</a>
+    </nav>
+    <main>
+        <div id="product-details" class="product-details"></div>
+        <div class="form-box">
+            <h3>Покупка</h3>
+            <p>Можете да добавите продукта в количката и после да завършите поръчката.</p>
+            <button id="add-product-button">
+                Добави в количката
+            </button>
+            <p class="cart-message"></p>
+        </div>
+        <div class="reviews">
+            <h3>Потребителски ревюта</h3>
+
+            <div id="reviews-list">
+                <p><strong>Мария:</strong> Много добър продукт.</p>
+                <p><strong>Иван:</strong> Доволен съм от покупката.</p>
+            </div>
+        </div>
+        <div class="form-box">
+            <h3>Форма за изпращане на ревю</h3>
+            <form id="review-form">
+                <label for="review-text">Коментар:</label>
+                <textarea id="review-text" name="review-text"></textarea>
+
+                <button type="submit">Изпрати ревю</button>
+            </form>
+            <p id="review-message"></p>
+        </div>
+    </main>
+    <footer>
+        <p>Folk Shop - учебен проект</p>
+    </footer>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
