@@ -26,6 +26,38 @@ app.get("/api/products/:id", async function (req, res) {
     const product = await Product.findById(req.params.id);
     res.json(product);
 });
+app.post("/api/products", async function (req, res) {
+    const product = new Product({
+        name: req.body.name,
+        shortDescription: req.body.shortDescription,
+        fullDescription: req.body.fullDescription,
+        price: req.body.price,
+        image: req.body.image
+    });
+    await product.save();
+    res.json({
+        message: "Продуктът беше добавен успешно."
+    });
+});
+app.put("/api/products/:id", async function (req, res) {
+    await Product.findByIdAndUpdate(req.params.id, {
+        name: req.body.name,
+        shortDescription: req.body.shortDescription,
+        fullDescription: req.body.fullDescription,
+        price: req.body.price,
+        image: req.body.image
+    });
+    res.json({
+        message: "Продуктът беше редактиран успешно."
+    });
+});
+app.delete("/api/products/:id", async function (req, res) {
+    await Product.findByIdAndDelete(req.params.id);
+
+    res.json({
+        message: "Продуктът беше изтрит успешно."
+    });
+});
 app.post("/api/orders", async function (req, res) {
     const buyerName = req.body.buyerName;
     const buyerAddress = req.body.buyerAddress;

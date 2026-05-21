@@ -119,3 +119,24 @@ footer {
     border-radius: 6px;
     background-color: #fff8ee;
 }
+.admin-box form input,
+.admin-box form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+.admin-box form button,
+.admin-item button {
+    background-color: #7b1e1e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.admin-box form button:hover,
+.admin-item button:hover {
+    background-color: #4b1111;
+}
