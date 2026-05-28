@@ -194,7 +194,6 @@ if (productDetails != null) {
             });
         });
 }
-// Админ панел
 let adminProducts = document.getElementById("admin-products");
 let adminOrders = document.getElementById("admin-orders");
 let productForm = document.getElementById("product-form");
