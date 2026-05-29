@@ -4,7 +4,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/folk-shop")
     .then(async function () {
         console.log("Connected to MongoDB");
         await Product.deleteMany();
-
         await Product.create([
             {
                 name: "Дамски скарпини",
